@@ -104,7 +104,7 @@
 			<stop  offset="0" style="stop-color:#A4C9CF"/>
 			<stop  offset="1" style="stop-color:#B7DBE1"/>
 		</linearGradient>
-		<circle class="st6 animationmain" cx="251.9" cy="443.6" r="498.2"/>
+		<circle class="st6 animationmain" cx="251.9" cy="443.6" r="400.2"/>
 	</g>
 </g>
 </svg>

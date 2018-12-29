@@ -3,52 +3,22 @@
       <iframe src="https://snazzymaps.com/embed/90669" width="100%" height="100%" style="border:none;"></iframe>
   </div>
   <div class="grid-50 contact-content">
-    <div class="titlecontact">Hello!<br>Drop Us a Line</div>
+    <div class="titlecontact">Let's<br>have a coffee together</div>
     <div class="contactdetails">
-      E-mail <a href="mailto:info@pixelorio.com">info@pixelorio.com</a>&nbsp;&nbsp;&nbsp;&nbsp;Phone <a href="tel:(+91) 9355125135">(+91) 9355125135</a>
-      <br><br>We will help to elaborate a UI/UX  service user scenario, choose architecture and technology for your project, set up analytics and launch the project.
+      <span>E-mail</span> <a href="mailto:sayhello@pixelorio.com">sayhello@pixelorio.com</a><span>Phone</span> <a href="tel:(+91) 9355125135">(+91) 9355125135</a>
+      <br><br>Let’s talk over a cup of coffee…We can&#39;t wait to talk with you about your
+      business needs &amp; upcoming project!
     </div>
     <div class="contact-social-links">
         <ul>
-          <li><a href="#" target="_blank"><img src="assets/img/messenger.svg"><span>Facebook</span></a></li>
-          <li><a href="#" target="_blank"><img src="assets/img/twitter.svg"><span>Twitter</span></a></li>
+          <li><a href="https://www.facebook.com/Pixelorio_Squad-1220223904800118/?modal=admin_todo_tour" target="_blank"><img src="assets/img/messenger.svg"><span>Facebook</span></a></li>
+          <li><a href="https://twitter.com/Pixelorio_Squad" target="_blank"><img src="assets/img/twitter.svg"><span>Twitter</span></a></li>
           <li><a href="#" target="_blank"><img src="assets/img/skype.svg"><span>Call In Skype</span></a></li>
-          <li><a href="#" target="_blank"><img src="assets/img/arroba.svg"><span>Write E-mail</span></a></li>
-          <li><a href="#" target="_blank"><img src="assets/img/linkedin.svg"><span>Linkedin</span></a></li>
+          <li><a href="mailto:sayhello@pixelorio.com" target="_blank"><img src="assets/img/arroba.svg"><span>Write E-mail</span></a></li>
+          <li><a href="https://www.linkedin.com/in/pixelorio-squad" target="_blank"><img src="assets/img/linkedin.svg"><span>Linkedin</span></a></li>
         </ul>
     </div>
       <div class="contactform">
-        <form>
-          <div class="contactformrow">
-            <div class="contactformrowhalf">
-              <input class="contactforminput" tabindex="1" name="uname" placeholder="Your Name *" [(ngModel)]="uname">
-              <div *ngIf="!uname" class="contactformerror">required field</div>
-            </div>
-            <div class="contactformrowhalf">
-              <input class="contactforminput"  tabindex="2" name="mail" type="email" placeholder="Your E-mail *" [(ngModel)]="mail">
-              <div *ngIf="!mail" class="contactformerror">required field</div>
-              <div *ngIf="mail && !emailregex.test(mail)" class="contactformerror">Please enter correct email address</div>
-            </div>
-          </div>
-          <div class="contactformrow">
-            <input type="text" class="contactforminput" name="phone" tabindex="3" placeholder="Your Phone" [(ngModel)]="phone">
-            <div *ngIf="phone && !phoneregex.test(phone)" class="contactformerror">Please enter a valid phone number.</div>
-          </div>
-          <div class="contactformrow">
-            <textarea class="contactformtextarea" tabindex="4" rows="2" name="message" placeholder="Message *" [(ngModel)]="message"></textarea>
-            <div *ngIf="!message" class="contactformerror">required field</div>
-          </div>
-          <div class="contactformsubmit">
-            <button class="contactformsubmitbutton contactformsubmitbutton_primary contactformsubmitbutton_disabled" tabindex="4" type="submit" (click)="sendform()">
-              Send
-            </button>
-          <!-- <input class="contactformfile"  multiple="" type="file">
-          <a class="contactformsubmitbutton" href="javascript:void(0)" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-            <span class="contactformsubmitbuttonlabel">
-                Attach file
-            </span>
-          </a> -->
-          </div>
-        </form>
+        <app-contactform></app-contactform>
       </div>
   </div>

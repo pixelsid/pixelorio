@@ -1,11 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import {trigger, animate, style, group, animateChild, query, stagger, transition} from '@angular/animations';
+import {TweenMax, Power2, TimelineLite, Linear, TweenLite, TimelineMax, SplitText} from "gsap/TweenMax";
 import { Directive, Output, HostListener, EventEmitter } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {OwlCarousel} from 'ngx-owl-carousel';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
-import { Router } from '@angular/router';
+import { 
+	Router, NavigationStart, NavigationCancel, NavigationEnd
+} from '@angular/router';
+import { LoaderService } from './loader.service';
 
 
 @Directive({ selector: '[mouseWheel]' })
@@ -75,6 +79,7 @@ export class MouseWheelDirective {
 
 export class AppComponent {
 	@ViewChild('owlElement') owlElement: OwlCarousel;
+	@ViewChild('switchroutes') routeswitch:any;
 	title = 'app';
 	paramblue: object = {};
 	paramwhite: object = {};
@@ -82,15 +87,71 @@ export class AppComponent {
 	myParams: object = {};
 	width: number = 100;
 	height: number = 100;
+	currentPageName:any="Home";
 	router:any;
+	spanner:number = 0;
 	config:any={
 		mousewheel:true
 	}
 
-  constructor(private _router: Router ) {
+  constructor(private _router: Router, private loader: LoaderService ) {
 	this.router = _router;
-  }
+	}
+	
+	// for router swiper
+	moveright(e){
+		this.spanner+=1;
+		console.log(this.spanner);
+		if(this.spanner>=80){
+			return false;
+		}
+		this.routeswitch.nativeElement.style.transform="translateX("+this.spanner+"%)";
+		
+	}
 
+	call(){
+		self.location.href='tel:(+91) 9355125135';
+	}
+
+	mail(){
+		self.location.href='mailto:sayhello@pixelorio.com';
+	}
+
+	moveleft(e){
+		this.spanner-=1;
+		console.log(this.spanner);
+		if(this.spanner<=2){
+			return false;
+		}
+		this.routeswitch.nativeElement.style.transform="translateX("+this.spanner+"%)";
+	}
+
+	swipeforroutes(){
+		if(this.spanner<=2 ){
+			this.spanner=2;
+			this.routeswitch.nativeElement.style.transform="translateX("+this.spanner+"%)";
+			this._router.navigateByUrl('');
+			this.currentPageName="Home";
+		}
+		if(this.spanner>4 && this.spanner<=25 ){
+			this.spanner=25;
+			this.routeswitch.nativeElement.style.transform="translateX("+this.spanner+"%)";
+			this._router.navigateByUrl('/about');
+			this.currentPageName="About";
+		}
+		if(this.spanner>26 && this.spanner<=50 ){
+			this.spanner=50;
+			this.routeswitch.nativeElement.style.transform="translateX("+this.spanner+"%)";
+			this._router.navigateByUrl('/services');
+			this.currentPageName="Services";
+		}
+		if(this.spanner>51 && this.spanner<=79 ){
+			this.spanner=79;
+			this.routeswitch.nativeElement.style.transform="translateX("+this.spanner+"%)";
+			this._router.navigateByUrl('/contact');
+			this.currentPageName="Contact";
+		}
+	}
 
   // For home slide
 
@@ -106,14 +167,22 @@ ngAfterViewInit(){
 	// 	}
 	// 	e.preventDefault();
 	// });
+	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
+  else{
+     $('#audio').remove() //just to make sure that it will not have 2x audio in the background 
+  }
 	$('*').click(function(){
 		$('#audioclick')[0].play();
 	});
 }
 ngOnInit(){
-	$(document).mousemove(function(){
-		$('#audio')[0].play();
-	});
+	//this.loader.showloading();
+	// $(document).mousemove(function(){
+	// 	$('#audio')[0].play();
+	// });
 	$('.menu-opener').click(function(){
 	$(this).toggleClass('opened');
 	$('#hor-menu').toggleClass('opened');
@@ -153,11 +222,15 @@ setTimeout(function(){
 
 	$(document).mousemove(function(e){
 		var rotate = Math.random()*100;
-		$moveable.css({'top': e.pageY,'left': e.pageX});
-		$moveable.addClass('moved');
-		setTimeout(function(){
-			$moveable.removeClass('moved');
-		},700);
+		var x = e.clientX;
+		var y = e.clientY;
+		var newposX = x - 12;
+		var newposY = y - 12;
+		$moveable.css("transform","translate3d("+newposX+"px,"+newposY+"px,0px)");
+		// $moveable.addClass('moved');
+		// setTimeout(function(){
+		// 	$moveable.removeClass('moved');
+		// },700);
 		
 	});
 
@@ -166,17 +239,29 @@ setTimeout(function(){
 			 e.preventDefault();
 		}
  });
+ 
 
 	
 
-	$('#audio')[0].attr('autoplay', 'autoplay');
+	//$('#audio')[0].attr('autoplay', 'autoplay');
 	
 }
 
 getState(outlet) {
-    return outlet.activatedRouteData.state;
-  }
+		return outlet.activatedRouteData.state;
+}
 
+
+
+spreadme(){
+	var tl = new TimelineLite;
+    var mySplitText = new SplitText(".portfolio-link a", {type:"words,chars"}); 
+    var chars = mySplitText.chars;
+
+TweenLite.set(".portfolio-link a", {perspective:400});
+
+tl.staggerFrom(chars, 2, {opacity:0, scale:0, y:-80, rotationX:-180, transformOrigin:"0% 50% -50"}, 0.1, "+=0");
+}
 	
 
 }

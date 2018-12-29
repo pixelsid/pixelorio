@@ -23,12 +23,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ngx-slick/slick.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/jquery-mousewheel/jquery.mousewheel.js",
-              "./node_modules/owl.carousel/dist/owl.carousel.js"
+              "./node_modules/owl.carousel/dist/owl.carousel.js",
+              "./node_modules/ngx-slick/slick.js",
+              "./node_modules/gsap/umd/TweenMax.js",
+              "./node_modules/gsap/umd/ScrollToPlugin.js"
           ]
           },
           "configurations": {

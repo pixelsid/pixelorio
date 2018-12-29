@@ -1,6 +1,7 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
+import * as $ from 'jquery';
+import { OwlCarousel } from 'ngx-owl-carousel';
 import 'hammerjs';
-import { $ } from '../../../node_modules/protractor';
 
 @Component({
   selector: 'app-home',
@@ -13,111 +14,91 @@ export class HomeComponent implements OnInit {
   @ViewChild('cubes') cubes:any;
   @ViewChild('rightspans') rightspans:any;
   @ViewChild('leftspans') leftspans:any;
+  @ViewChild('owl2') portslider:OwlCarousel;
   state = 'in';
+  isChrome:boolean;
   defaultpos:number=0;
   myStyle: object = {};
   myParams: object = {};
   width: number = 100;
   height: number = 100;
   randomtops:any=[];
+  portfolios=[
+    {
+      src:"assets/img/home-port/3.jpg",
+      theme:"#9d0832",
+    },
+    {
+      src:"assets/img/home-port/4.jpg",
+      theme:"radial-gradient(#1f1655, #281a69)"
+    },
+    {
+      src:"assets/img/home-port/5.jpg",
+      theme:"#291eff"
+    },
+    {
+      src:"assets/img/home-port/2.jpg",
+      theme:"linear-gradient(#fffbf0, #fee6c2)"
+    },
+    {
+      src:"assets/img/home-port/1.jpg",
+      theme:"linear-gradient(to right, #6b4598 50%, #ffffff 50%)",
+      srcwebp:"assets/img/home-port/1.webp"
+    },
+    {
+      src:"assets/img/home-port/6.jpg",
+      theme:"#f6ee31"
+    },
+    {
+      src:"assets/img/home-port/7.jpg",
+      theme:"#c1dbf2"
+    },
+    {
+      src:"assets/img/home-port/8.jpg",
+      theme:"#f0c6ee"
+    },
+    {
+      src:"assets/img/home-port/9.jpg",
+      theme:"#ffe44f"
+    },
+    {
+      src:"assets/img/home-port/10.jpg",
+      theme:"linear-gradient(to right, #204299, #221e1f)"
+    },
+    {
+      src:"assets/img/home-port/11.jpg",
+      theme:"#f7f7f7"
+    },
+    {
+      src:"assets/img/home-port/12.jpg",
+      theme:"linear-gradient(to right, #84bae6 50%, #c89e74 50%)"
+    },
+    {
+      src:"assets/img/home-port/13.png",
+      theme:"linear-gradient(to right, #d3dbdf 50%, #fa2534 50%)"
+    },
+    {
+      src:"assets/img/home-port/14.gif",
+      theme:"#234f66"
+    }
+  ]
 
   constructor() { }
 
   
   ngOnInit() {
-    document.addEventListener('pan', this.scroll, true);
-    this.hover.nativeElement.addEventListener('mouseover', () => {
-      this.graphic.nativeElement.style.transform="scale(0)";
-    });
+    if(window.navigator.userAgent.indexOf('Firefox') > -1){
+      
+    }
+}
 
-    this.hover.nativeElement.addEventListener('mouseout', () => {
-      this.graphic.nativeElement.style.transform="scale(1)";
-    });
-    var getanimid = document.getElementById('anim1');
-    var getanimid2 = document.getElementById('anim2');
-    var getanimid3 = document.getElementById('anim3');
-    console.log(getanimid);
+  ngAfterViewInit(){
     setTimeout(()=>{
-        getanimid.setAttribute('dur', '30s');
-        getanimid2.setAttribute('dur', '20s');
-        getanimid3.setAttribute('dur', '10s');
-    },700);
+      this.portslider.reInit();
+    $('.autoplayslider').addClass('loaded');
+    },1000);
     
-
-    this.myStyle = {
-      'position': 'fixed',
-      'width': '100%',
-      'height': '100%',
-      'z-index': -1,
-      'top': 0,
-      'left': 0,
-      'right': 0,
-      'bottom': 0,
-  };
-
-this.myParams = {
-  "particles": {
-      "number": {
-          "value": 17,
-          "density": {
-              "enable": true,
-              "value_area": 800
-          }
-      },
-      "color": {
-          "value": "#c7a88b"
-      },
-      "shape": {
-          "type": "circle",
-          "stroke": {
-              "width": 0,
-              "color": "#000"
-          }
-      },
-      "opacity": {
-          "value": 1,
-          "random": true,
-          "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.4,
-              "sync": true
-          }
-      },
-      "size": {
-          "value": 160,
-          "random": true,
-          "anim": {
-              "enable": true,
-              "speed": 1,
-              "size_min": 40,
-              "sync": false
-          }
-      },
-      "line_linked": {
-          "enable": false,
-          "distance": 200,
-          "color": "#ffffff",
-          "opacity": 1,
-          "width": 2
-      },
-      "move": {
-          "enable": true,
-          "speed": 1,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": true,
-          "attract": {
-              "enable": true,
-              "rotateX": 600,
-              "rotateY": 1200
-          }
-      }
   }
-}
-}
     
   
   ngOnDestroy() {
@@ -127,6 +108,10 @@ this.myParams = {
 
   scroll(){
     
+  }
+
+  lll(){
+    alert('dsd');
   }
 
 }

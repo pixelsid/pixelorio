@@ -1,18 +1,18 @@
-<div class="content bg-brown" [@routerTransition]="getState(o)" [ngClass]="{'contactpage':this.router.url=='/contact' || this.router.url=='/about'}">
+<div class="content bg-brown" [@routerTransition]="getState(o)" [ngClass]="{'contactpage':this.router.url=='/contact' || this.router.url=='/about' || this.router.url=='/services/web' || this.router.url=='/services/app' || this.router.url=='/services/digitalmarketing' || this.router.url=='/services/web/details' }">
     <div class="container-content">
-      <!-- header starts -->
-      <div class="header" *ngIf="this.router.url !== '/contact'">
+      <div class="header" *ngIf="this.router.url !== '/contact' || this.router.url !== '/services'">
         <div class="logo">
-          <img src="assets/img/loader.svg" />
+          <img src="assets/img/loader-2.svg" />
         </div>
         <div class="container-menu">
-          <div class="menu grid-50">
-            <h3 class="color-brown"><span class="header-icon"><i class="zmdi zmdi-phone"></i></span> (+91) 9355125135</h3>
-          </div>
-          <div class="menu grid-50">
-            <h3 class="color-brown"><span class="header-icon"><i class="zmdi zmdi-email-open"></i></span> sayhello@pixelorio.com</h3>
+          <div class="menu flexi">
+            <h3 class="color-brown" (click)="call()"><span class="header-icon"><i class="zmdi zmdi-phone"></i></span> (+91) 9355125135</h3>
+            <h3 class="color-brown" (click)="mail()"><span class="header-icon"><i class="zmdi zmdi-email-open"></i></span> sayhello@pixelorio.com</h3>
           </div>
         </div>
+      </div>
+
+      <div class="right-sec" *ngIf="this.router.url==='/'">
       </div>
 
       <div class="menu-opener">
@@ -21,31 +21,25 @@
       </div>
       
 
-      <audio id="audioclick" src="assets/sounds/clickme.mp3"></audio>
+      <div class="portfolio-link" [class.linkopened]="this.router.url=='/services'" *ngIf="this.router.url==='/'">
+        <span class="zmdi zmdi-long-arrow-right"></span>
+        <a routerLink="/services" (click)="spreadme()">Our Portfolio</a>
+      </div>
 
-      <audio autoplay id="audio">
-        <source src="assets/sounds/bgpixel.mp3" type="audio/mpeg">
+      <!-- <div class="pagetoggle" (panleft)="moveleft($event)" (panright)="moveright($event)" (panend)="swipeforroutes()" #switchroutes>
+        <div class="pagename">{{ currentPageName }}</div>
+        <span></span>
+      </div> -->
+      
+
+      <audio id="audioclick" src="assets/sounds/clickme.mp3"></audio>
+      <iframe src="http://pixelorio.com/assets/sounds/bgpixel.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+      </iframe>
+      <audio autoplay loop id="audio">
+        <source src="http://pixelorio.com/assets/sounds/bgpixel.mp3" type="audio/mpeg">
       </audio>
       
       <div class="menu-container" id="hor-menu">
-        <!-- <span class="menu-bg" id="bgmenu"></span>
-        <span class="menu-bg-line"></span>
-        <owl-carousel
-        [options]="{items: 8, dots: false, nav: true, loop:true, fluidSpeed:1000, smartSpeed:1000, mergeFit:true, center:true, lazyLoad:true}" 
-        [carouselClasses]="['owl-theme', 'owl', 'row', 'owl-1', 'sliding', 'vertimenu']" #owlElement mouseWheel>
-          <div class="item" >
-              <a routerLink="">Home</a>
-          </div>
-          <div class="item" >
-            <a routerLink="/about">About</a>
-          </div>
-          <div class="item" >
-            <a href="#">Services</a>
-          </div>
-          <div class="item" >
-            <a routerLink="/contact">Contact</a>
-          </div>
-        </owl-carousel> -->
         <div class="menubgname">
           <div class="titlemenu">
             <div class="letters">M</div>
@@ -59,31 +53,18 @@
           <ul>
             <li><a routerLink = "" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
             <li><a routerLink = "/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a></li>
+            <li><a routerLink = "/services" routerLinkActive="active">Services</a></li>
             <li><a routerLink = "/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a></li>
           </ul>
         </nav>
 
       </div>
       <router-outlet #o="outlet"></router-outlet>
-      <!-- header ends -->
       
     </div>
   </div>
 
-  <!-- <div class="loader">
-    <div class="loadlay"></div>
-    <div class="e-loadholder">
-      <div class="m-loader">
-        <span class="e-text">
-          <img src="assets/img/loader.svg" />
-        </span>
-      </div>
-    </div>
-    <particles [params]="paramblue" [style]="myStyle" [width]="width" [height]="height"></particles>
-    <particles [params]="paramwhite" [style]="myStyle" [width]="width" [height]="height"></particles>
-  </div> -->
-
-  <div class="mouse">
+  <!-- <div class="mouse">
       <span></span>
-  </div>
+  </div> -->
 

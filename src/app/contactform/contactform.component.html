@@ -1,0 +1,32 @@
+<form>
+  <div class="contactformrow">
+    <div class="contactformrowhalf">
+      <input class="contactforminput" tabindex="1" name="uname" placeholder="Your Name *" [(ngModel)]="uname">
+      <div *ngIf="!uname" class="contactformerror">required field</div>
+    </div>
+    <div class="contactformrowhalf">
+      <input class="contactforminput"  tabindex="2" name="mail" type="email" placeholder="Your E-mail *" [(ngModel)]="mail">
+      <div *ngIf="!mail" class="contactformerror">required field</div>
+      <div *ngIf="mail && !emailregex.test(mail)" class="contactformerror">Please enter correct email address</div>
+    </div>
+  </div>
+  <div class="contactformrow">
+    <input type="text" class="contactforminput" name="phone" tabindex="3" placeholder="Your Phone" [(ngModel)]="phone">
+    <div *ngIf="phone && !phoneregex.test(phone)" class="contactformerror">Please enter a valid phone number.</div>
+  </div>
+  <div class="contactformrow">
+    <textarea class="contactformtextarea" tabindex="4" rows="2" name="message" placeholder="Message *" [(ngModel)]="message"></textarea>
+    <div *ngIf="!message" class="contactformerror">required field</div>
+  </div>
+  <div class="contactformsubmit" style="padding:35px 0;">
+    <button class="contactformsubmitbutton contactformsubmitbutton_primary contactformsubmitbutton_disabled" tabindex="4" type="submit" (click)="sendform($event)">
+      Send
+    </button>
+  <!-- <input class="contactformfile"  multiple="" type="file">
+  <a class="contactformsubmitbutton" href="javascript:void(0)" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    <span class="contactformsubmitbuttonlabel">
+        Attach file
+    </span>
+  </a> -->
+  </div>
+</form>

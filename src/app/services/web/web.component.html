@@ -1,0 +1,226 @@
+<div class="all-sections" (scroll)="onscroll($event)">
+  <div class="section section-slide">
+      <ngx-slick class="carousel servicecarousel" #slicker [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <img src="{{ slide.img }}" alt="" width="100%" />
+                <div class="text-slide">
+                  <div class="maintext">{{ slide.textmain }}</div>
+                </div>
+          </div>
+      </ngx-slick>
+      <div class="slidepaginate">
+        <div class="slidepages"  *ngFor="let page of slides; let i = index" (click)="nextSlide(i)">
+          <span>{{ i+1 }}</span>{{ page.textmain }}
+        </div>
+      </div>
+  </div>
+  <div class="section section-about-service">
+    <div class="container">
+      <div class="flexi">
+        <div class="grid-50">
+          <div class="flexi">
+            <div class="grid-50">
+              <img src="assets/img/craft.jpg" />
+            </div>
+            <div class="grid-50">
+              <img src="assets/img/craft2.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="grid-50">
+          <div class="text-about">
+            <div class="text-title">Why should you choose web development from us:</div>
+            <div class="text-subtitle">
+              Well, we are expert and an expert needs no explanation.
+            </div>
+            <div class="about-desc-text">
+              Moreover, we use all
+the latest web technologies and make your website responsive for every
+device. We offer all kinds of web development services be it Static web
+application or Dynamic web application, E-commerce or Web portal,
+Animated web application or CMS Web application with a content
+
+management system. The usage of HTML markup language, Cascading Style
+Sheet, Frameworks, Programming Languages technologies is part of our
+daily site development chore.
+            </div>
+            <div class="about-btn">
+              <a routerLink = "/about" class="pixel-btn">About Company</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-steps-service">
+    <div class="container">
+      <div class="flexi">
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Discussion of the Idea</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Handcrafted Templates</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Testing for Perfection</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Project Deployment</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-figures">
+    <div class="container">
+      <div class="flexi">
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure happy">350</div>
+            <div class="factor">Cups of Coffee</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure photo">127</div>
+            <div class="factor">Projects Developed</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure work">97</div>
+            <div class="factor">Happy Clients</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure phone">365</div>
+            <div class="factor">Days of Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-carousels">
+    <ngx-slick class="carousel carouselbig" #slickermain [config]="slideConfigbig">
+      <div ngxSlickItem *ngFor="let slide of bigcarousel" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%" />
+      </div>
+    </ngx-slick>
+    <div class="container csmallcontainer">
+      <ngx-slick class="carousel carouselsmall" #slickersmall [config]="slideConfigsmall">
+        <div ngxSlickItem *ngFor="let slide of smallcarousel" class="slide">
+              <div class="headsmall">{{ slide.maintext }}</div>
+              <div class="descsmall">{{ slide.desctext }}</div>
+        </div>
+      </ngx-slick>
+    </div>
+  </div>
+  <div class="section section-branding">
+    <div class="container">
+      <div class="flexi align-items-center flex-nowrap">
+        <div class="grid-auto">
+          <div class="brandhead">We focus on quality &amp; cost-effective web solutions.</div>
+          <div class="branddesc">Web development is in demand these days, it can range from
+            developing a simple static web page to complex web-based internet
+            applications and no wonder, we are skilled developers, because we are
+            Pixelorio.</div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">User-friendly Navigation</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">Webpage Speed</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">Search Engine Optimization</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">Web Compatibility</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="animatearea">
+    <div class="section section-portfolio">
+      <div class="text-center">
+        <small>Best of Ours</small>
+        <div class="bighead">New Projects</div>
+        <div class="portfolio-grid">
+          <div class="portitem" *ngFor="let item of portfolios">
+            <img src="{{ item.image }}" />
+            <div class="details-overlay">
+              <div class="portname">{{ item.name }}</div>
+              <div class="portinfo">{{ item.category }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-about-video">
+    <div class="container">
+      <div class="flexi align-items-center">
+        <div class="grid-50">
+          <div class="videohead">Pixelorio went above and beyond in serving us</div>
+          <div class="videodesc">
+            to create our website
+and truthfully understood our needs. Working with Pixelorio has been
+one of the most positive professional experiences I’ve had. Their
+professional team is extremely talented and knowledgeable about every
+aspect of website development and marketing, but his level of
+professionalism is rare in any field.- <b>Founder- Mayank.B</b>
+          </div>
+        </div>
+        <div class="grid-50">
+          <div class="flexi align-items-center">
+            <div class="grid-50">
+              <img src="assets/img/vid1.jpg" />
+            </div>
+            <div class="grid-50">
+              <img src="assets/img/vid1.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-service-footer">
+    <app-contact></app-contact>
+  </div>
+</div>

@@ -1,0 +1,561 @@
+<div class="all-sections" (scroll)="onscroll($event)">
+  <div class="section section-slide">
+      <ngx-slick class="carousel servicecarousel" #slicker [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <img src="{{ slide.img }}" alt="" width="100%" />
+                <div class="text-slide">
+                  <div class="maintext">{{ slide.textmain }}</div>
+                </div>
+          </div>
+      </ngx-slick>
+      <div class="slidepaginate">
+        <div class="slidepages"  *ngFor="let page of slides; let i = index" (click)="nextSlide(i)">
+          <span>{{ i+1 }}</span>{{ page.textmain }}
+        </div>
+      </div>
+  </div>
+  <div class="section section-about-service">
+    <div class="container">
+      <div class="flexi">
+        <div class="grid-50">
+          <div class="flexi">
+            <div class="grid-50">
+              <img src="assets/img/craft.jpg" />
+            </div>
+            <div class="grid-50">
+              <img src="assets/img/craft2.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="grid-50">
+          <div class="text-about">
+            <div class="text-title">Why should you choose app development services from us:</div>
+            <div class="text-subtitle">
+              We take care of our client’s needs by offering them first-rate customer
+service besides understanding their goal.
+            </div>
+            <div class="about-desc-text">
+              Creating a successful mobile
+application is complex for others, but we have become ‘Digital King. Just tell
+us which mobile operating system to go for. We offer end-to-end native
+android apps, iOS apps, windows apps, hybrid apps, ionic app, cross-
+platform, custom mobile app development services only available at
+Pixelerio.
+            </div>
+            <div class="about-btn">
+              <a routerLink = "/about" class="pixel-btn">About Company</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-steps-service">
+    <div class="container">
+      <div class="flexi">
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Discussion of the Idea</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Handcrafted Templates</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Testing for Perfection</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="step-box text-center">
+            <div class="iconcircle">
+              <img src="assets/img/discuss.png" />
+            </div>
+            <div class="step-title">Project Deployment</div>
+            <div class="step-desc">Lorem Ipsum is simply text of the printing and typesetting standard industry.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-figures">
+    <div class="container">
+      <div class="flexi">
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure happy">350</div>
+            <div class="factor">Cups of Coffee</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure photo">127</div>
+            <div class="factor">Projects Developed</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure work">97</div>
+            <div class="factor">Happy Clients</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="figurebox text-center">
+            <div class="figure phone">365</div>
+            <div class="factor">Days of Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-carousels">
+    <ngx-slick class="carousel carouselbig" #slickermain [config]="slideConfigbig">
+      <div ngxSlickItem *ngFor="let slide of bigcarousel" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%" />
+      </div>
+    </ngx-slick>
+    <div class="container csmallcontainer">
+      <ngx-slick class="carousel carouselsmall" #slickersmall [config]="slideConfigsmall">
+        <div ngxSlickItem *ngFor="let slide of smallcarousel" class="slide">
+              <div class="headsmall">{{ slide.maintext }}</div>
+              <div class="descsmall">{{ slide.desctext }}</div>
+        </div>
+      </ngx-slick>
+    </div>
+  </div>
+  <div class="section section-branding">
+    <div class="container">
+      <div class="flexi align-items-center flex-nowrap">
+        <div class="grid-auto">
+          <div class="brandhead">We focus on quality &amp; cost-effective App development.</div>
+          <div class="branddesc">With over 100+ successful app development projects, Pixelorio
+            is the only digital firm that offers technologically proven advanced mobile
+            application services customized as per individual’s business needs.</div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">Social Networking Potential</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">Designs For Diverse Screen Sizes</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">Less Keyboarding &amp; More Touch</div>
+          </div>
+        </div>
+        <div class="grid-25">
+          <div class="brandbox text-center">
+            <img src="assets/img/brand1.png" />
+            <div class="textbrand">User Feedback Scope</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="animatearea">
+    <div class="section section-portfolio">
+      <div class="text-center">
+        <small>Best of Ours</small>
+        <div class="bighead">New Projects</div>
+        <div class="portfolio-grid">
+          <div class="portitem" *ngFor="let item of portfolios">
+            <img src="{{ item.image }}" />
+            <div class="details-overlay">
+              <div class="portname">{{ item.name }}</div>
+              <div class="portinfo">{{ item.category }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-about-video">
+    <div class="container">
+      <div class="flexi align-items-center">
+        <div class="grid-50">
+          <div class="videohead">“Well, for us, there was no business without an engaging website!</div>
+          <div class="videodesc">
+            Pixelorio is the only company that made us feel convinced, swayed and
+comfortable that they can create what we have envisioned. It’s been a
+tremendous yet awe-inspiring experience working with Pixelorio team.
+They delivered on time and a great website, which not only our
+company members appreciated and highly praised but also our clients
+applauded. The website is something extraordinary than we
+imagined.” <b>Co-Founder- Sangeeta.M Digitlism.com</b>
+          </div>
+        </div>
+        <div class="grid-50">
+          <div class="flexi align-items-center">
+            <div class="grid-50">
+              <img src="assets/img/vid1.jpg" />
+            </div>
+            <div class="grid-50">
+              <img src="assets/img/vid1.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-service-footer">
+    <app-contact></app-contact>
+  </div>
+</div>
+<!-- <div class="webservices" (scroll)="onscroll($event)">
+  <div class="web-back-block backnotrotated">
+    <div class="backbgweb">
+      <div class="patternwebbg">
+        <div class="bgwebbottom">
+        </div>
+      </div>
+    </div>
+    <div class="servicebackblockcontent">
+      <div class="servicecolorblock color-red color-green-app">
+        <div class="servicecolorbg">
+          <span class="bgwaves"></span>
+        </div>
+        <div class="servicecontentstarts">
+          <div class="subtitleservice">
+            <div class="inlinersub">
+              <div class="wordweb">M</div>
+              <div class="wordweb">O</div>
+              <div class="wordweb">B</div>
+              <div class="wordweb">I</div>
+              <div class="wordweb">L</div>
+              <div class="wordweb">E</div>
+            </div>
+          </div>
+          <div class="servicemaintitle">
+            <div class="servicetitled">
+              <div>LARGE PROJECTS</div>
+              <div>FOR SMALL</div>
+              <div>DEVICES</div>
+            </div>
+          </div>
+          <div class="servicemainimage">
+            <div class="imagecontainerservice">
+              <div class="imagecontent">
+                <app-appsvg></app-appsvg>
+              </div>
+            </div>
+          </div>
+          <div class="servicecolumns">
+            <div class="itemcolumn">
+              <div class="serviceacclaims">
+                <img src="assets/img/acclaims.svg" />
+              </div>
+              <div class="servicetitlecolumn">Experts acclaim</div>
+              <div class="servicedescmain">
+                <div class="descninner">Our works are among global design awards winners</div>
+              </div>
+            </div>
+            <div class="itemcolumn">
+              <div class="serviceacclaims">
+                <img src="assets/img/liveweb.svg" />
+              </div>
+              <div class="servicetitlecolumn">LIVE WEBSITES</div>
+              <div class="servicedescmain">
+                <div class="descninner">Thanks to using superb animations your website will not leave anyone indifferent</div>
+              </div>
+            </div>
+            <div class="itemcolumn">
+              <div class="serviceacclaims">
+                <img src="assets/img/highloaded.svg" />
+              </div>
+              <div class="servicetitlecolumn">HIGH LOAD</div>
+              <div class="servicedescmain">
+                <div class="descninner">Developing services capable of processing more than 1 million users</div>
+              </div>
+            </div>
+            <div class="itemcolumn">
+              <div class="serviceacclaims">
+                <img src="assets/img/machineicon.svg" />
+              </div>
+              <div class="servicetitlecolumn">MACHINE LEARNING</div>
+              <div class="servicedescmain">
+                <div class="descninner">Working with neural networks, recommendation systems, computer vision and text processing</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolioweb">
+            <div class="webworks">
+              <div class="webslide">
+                <div class="webworkcolumns">
+                  <div class="itemworkweb">
+                    <div class="workimg">
+                      <div class="workimginner">
+                        <img src="assets/img/mobileapp1.jpg" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="itemworkweb">
+                    <div class="contentitem">
+                      <div class="worktags">
+                        <span class="worktag">Mass media</span>
+                        <span class="worktag"><span class="separator"></span>Concepts</span>
+                        <span class="worktag"><span class="separator"></span>Animations</span>
+                        <span class="worktag"><span class="separator"></span>Responsive</span>
+                      </div>
+                      <div class="worktitle">USA Today</div>
+                      <div class="workdesc">USA Today newspaper redesign. Enhanced website design with numerous intricate layouts, myriads of sections and thousands of informative pages</div>
+                      <div class="workbtns">
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          view site</a>
+                          <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          behance</a>
+                          <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          dribbble</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="webslide">
+                <div class="webworkcolumns">
+                  <div class="itemworkweb">
+                    <div class="contentitem">
+                      <div class="worktags">
+                        <span class="worktag">Corporate Websites</span>
+                        <span class="worktag"><span class="separator"></span>Animations</span>
+                      </div>
+                      <div class="worktitle">LENINGRAD</div>
+                      <div class="workdesc">Corporate website of a sports advertising agency <br />«Leningrad Media»</div>
+                      <div class="workbtns">
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          view site</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="itemworkweb">
+                    <div class="workimg righted">
+                      <div class="workimginner">
+                        <img src="assets/img/mobileapp1.jpg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="webslide">
+                <div class="webworkcolumns">
+                  <div class="itemworkweb">
+                    <div class="workimg">
+                      <div class="workimginner">
+                        <img src="assets/img/mobileapp1.jpg" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="itemworkweb">
+                    <div class="contentitem">
+                      <div class="worktags">
+                        <span class="worktag">Mass media</span>
+                        <span class="worktag"><span class="separator"></span>Concepts</span>
+                        <span class="worktag"><span class="separator"></span>Animations</span>
+                        <span class="worktag"><span class="separator"></span>Responsive</span>
+                      </div>
+                      <div class="worktitle">USA Today</div>
+                      <div class="workdesc">USA Today newspaper redesign. Enhanced website design with numerous intricate layouts, myriads of sections and thousands of informative pages</div>
+                      <div class="workbtns">
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          view site</a>
+                          <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          behance</a>
+                          <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          dribbble</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="webslide">
+                <div class="webworkcolumns">
+                  <div class="itemworkweb">
+                    <div class="contentitem">
+                      <div class="worktags">
+                        <span class="worktag">Corporate Websites</span>
+                        <span class="worktag"><span class="separator"></span>Animations</span>
+                      </div>
+                      <div class="worktitle">LENINGRAD</div>
+                      <div class="workdesc">Corporate website of a sports advertising agency <br />«Leningrad Media»</div>
+                      <div class="workbtns">
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                          view site</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="itemworkweb">
+                    <div class="workimg righted">
+                      <div class="workimginner">
+                        <img src="assets/img/mobileapp1.jpg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="servicetechwork">
+        <div class="servicemasker">
+          <div class="techanimation">
+            <img src="assets/img/ai-file.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="web-back-block backrotated">
+    <div class="backbgweb">
+      <div class="patternwebbg">
+        <div class="bgwebbottom">
+        </div>
+      </div>
+    </div>
+    <div class="servicebackblockcontent">
+      <div class="servicecolorblock color-red color-green-app">
+        <div class="servicecolorbg">
+          <span class="bgwaves"></span>
+        </div>
+        <div class="servicecontentstarts">
+          <div class="webworks">
+            <div class="webslide">
+              <div class="webworkcolumns">
+                <div class="itemworkweb">
+                  <div class="workimg">
+                    <div class="workimginner">
+                      <img src="assets/img/mobileapp1.jpg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="itemworkweb">
+                  <div class="contentitem">
+                    <div class="worktags">
+                      <span class="worktag">Mass media</span>
+                      <span class="worktag"><span class="separator"></span>Concepts</span>
+                      <span class="worktag"><span class="separator"></span>Animations</span>
+                      <span class="worktag"><span class="separator"></span>Responsive</span>
+                    </div>
+                    <div class="worktitle">USA Today</div>
+                    <div class="workdesc">USA Today newspaper redesign. Enhanced website design with numerous intricate layouts, myriads of sections and thousands of informative pages</div>
+                    <div class="workbtns">
+                      <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        view site</a>
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        behance</a>
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        dribbble</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="webslide">
+              <div class="webworkcolumns">
+                <div class="itemworkweb">
+                  <div class="contentitem">
+                    <div class="worktags">
+                      <span class="worktag">Corporate Websites</span>
+                      <span class="worktag"><span class="separator"></span>Animations</span>
+                    </div>
+                    <div class="worktitle">LENINGRAD</div>
+                    <div class="workdesc">Corporate website of a sports advertising agency <br />«Leningrad Media»</div>
+                    <div class="workbtns">
+                      <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        view site</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemworkweb">
+                  <div class="workimg righted">
+                    <div class="workimginner">
+                      <img src="assets/img/mobileapp1.jpg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="webslide">
+              <div class="webworkcolumns">
+                <div class="itemworkweb">
+                  <div class="workimg">
+                    <div class="workimginner">
+                      <img src="assets/img/mobileapp1.jpg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="itemworkweb">
+                  <div class="contentitem">
+                    <div class="worktags">
+                      <span class="worktag">Mass media</span>
+                      <span class="worktag"><span class="separator"></span>Concepts</span>
+                      <span class="worktag"><span class="separator"></span>Animations</span>
+                      <span class="worktag"><span class="separator"></span>Responsive</span>
+                    </div>
+                    <div class="worktitle">USA Today</div>
+                    <div class="workdesc">USA Today newspaper redesign. Enhanced website design with numerous intricate layouts, myriads of sections and thousands of informative pages</div>
+                    <div class="workbtns">
+                      <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        view site</a>
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        behance</a>
+                        <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        dribbble</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="webslide">
+              <div class="webworkcolumns">
+                <div class="itemworkweb">
+                  <div class="contentitem">
+                    <div class="worktags">
+                      <span class="worktag">Corporate Websites</span>
+                      <span class="worktag"><span class="separator"></span>Animations</span>
+                    </div>
+                    <div class="worktitle">LENINGRAD</div>
+                    <div class="workdesc">Corporate website of a sports advertising agency <br />«Leningrad Media»</div>
+                    <div class="workbtns">
+                      <a class="sitelinks" target="_blank" href="#" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        view site</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemworkweb">
+                  <div class="workimg righted">
+                    <div class="workimginner">
+                      <img src="assets/img/mobileapp1.jpg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

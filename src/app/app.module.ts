@@ -9,7 +9,6 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ParticlesModule } from 'angular-particle';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -21,6 +20,19 @@ import { MouseWheelDirective } from './app.component';
 
 import * as $ from 'jquery';
 import { OwlModule } from 'ngx-owl-carousel';
+import { ContactformComponent } from './contactform/contactform.component';
+import { WebComponent } from './services/web/web.component';
+import { MobileappComponent } from './services/app/app.component';
+import { DigitalmarketingComponent } from './services/digitalmarketing/digitalmarketing.component';
+import { WebsvgComponent } from './websvg/websvg.component';
+import { AppsvgComponent } from './appsvg/appsvg.component';
+import { DigitalsvgComponent } from './digitalsvg/digitalsvg.component';
+import { DetailsComponent } from './services/details/details.component';
+
+import { LoaderService } from './loader.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { CanvasbgComponent } from './canvasbg/canvasbg.component';
+import { SlickModule } from 'ngx-slick';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -33,7 +45,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { state: 'home' } },
-  { path: 'services', component: ServicesComponent, data: { state: 'services' } },
+  { path: 'services', component: ServicesComponent, data: { state: 'services' }},
+  {path:'services/web', component: WebComponent, data: {state:'web'}},
+  {path:'services/web/details', component: DetailsComponent, data: {sate:'details'}},
+  {path:'services/app', component: MobileappComponent, data: {state:'app'}},
+  {path:'services/app/details', component: DetailsComponent, data: {sate:'details'}},
+  {path:'services/digitalmarketing', component: DigitalmarketingComponent, data: {state:'digital'}},
+  {path:'services/digitalmarketing/details', component: DetailsComponent, data: {sate:'details'}},
   { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
   { path: 'about', component: AboutComponent, data: { state: 'about' } },
   { path: 'clientele', component: TestimonialComponent, data: { state: 'clientele' } } 
@@ -52,27 +70,37 @@ const appRoutes: Routes = [
     ServicesComponent,
     ContactComponent,
     TestimonialComponent,
-    MouseWheelDirective 
+    MouseWheelDirective,
+    ContactformComponent,
+    WebComponent,
+    WebsvgComponent,
+    MobileappComponent,
+    AppsvgComponent,
+    DigitalmarketingComponent,
+    DigitalsvgComponent,
+    CanvasbgComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ParticlesModule,
     SwiperModule,
     OwlModule,
     FormsModule,
     HttpModule,
     HttpClientModule,
+    NgxSpinnerModule,
+    SlickModule.forRoot(),
     RouterModule.forRoot(
-      appRoutes,
-      {enableTracing:true}
+      appRoutes
     )
   ],
   providers: [
     {
       provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG
-    }
+      useValue: DEFAULT_SWIPER_CONFIG,
+    },
+    LoaderService
   ],
   bootstrap: [AppComponent]
 })
