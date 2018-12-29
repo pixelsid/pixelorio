@@ -1,0 +1,94 @@
+<div class="background-main tab-1 active">
+	<div class="bg-circles block">
+	   <!-- <span class="size-33"></span>
+		  <span class="size-21"></span>
+		  <span class="size-13"></span>
+		  <span class="size-15"></span>
+		  <span class="size-18"></span>
+		  <span class="size-25"></span>
+		  <span class="size-10"></span>
+		  <span class="size-4"></span>
+		  <span class="size-2"></span> -->
+	   <div class="leftspans" #leftspans>
+		  <!-- <div class="overlayscreen black"></div> -->
+		  <div class="overlayscreen brown"></div>
+		  <!-- <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles> -->
+		  <div class="circle-bg-svg" #cubes>
+			 <img src="assets/img/cube.svg" />
+		  </div>
+	   </div>
+	   <!-- <div class="rightspans" #rightspans></div> -->
+	</div>
+	<div class="bg-movables" #movables>
+	   <!-- <img src="assets/img/circle.svg" /> -->
+	   <div class="imgsvg">
+		  <svg version="1.1"
+			 baseProfile="full"
+			 viewBox="0 0 600 600"
+			 xmlns="http://www.w3.org/2000/svg"
+			 xmlns:xlink="http://www.w3.org/1999/xlink">
+			 <defs>
+				<path d="M160.192379,410.192379 L110.192379,410.192379 C110.192379,244.506954 244.506954,110.192379 410.192379,110.192379 L410.192379,160.192379 C272.121191,160.192379 160.192379,272.121191 160.192379,410.192379 Z M410.192379,660.192379 L410.192379,710.192379 C575.877804,710.192379 710.192379,575.877804 710.192379,410.192379 L660.192379,410.192379 C660.192379,548.263566 548.263566,660.192379 410.192379,660.192379 Z" id="circle-fragments-b"></path>
+				<path d="M120.493649,320.493649 L70.4936491,320.493649 C70.4936491,182.422462 182.422462,70.4936491 320.493649,70.4936491 L320.493649,120.493649 C210.036699,120.493649 120.493649,210.036699 120.493649,320.493649 Z M320.493649,520.493649 L320.493649,570.493649 C458.564837,570.493649 570.493649,458.564837 570.493649,320.493649 L520.493649,320.493649 C520.493649,430.950599 430.950599,520.493649 320.493649,520.493649 Z" id="circle-fragments-c"></path>
+				<path d="M82.1572875,232.157288 L32.1572875,232.157288 C32.1572875,121.700338 121.700338,32.1572875 232.157288,32.1572875 L232.157288,82.1572875 C149.314575,82.1572875 82.1572875,149.314575 82.1572875,232.157288 Z M232.157288,382.157288 L232.157288,432.157288 C342.614237,432.157288 432.157288,342.614237 432.157288,232.157288 L382.157288,232.157288 C382.157288,315 315,382.157288 232.157288,382.157288 Z" id="circle-fragments-d"></path>
+			 </defs>
+			 <g fill="none" fill-rule="evenodd">
+				<g transform="translate(-109 -110)">
+				   <use xlink:href="#circle-fragments-b" fill="#6f9aa1" transform="rotate(354.656 410.192 410.192)">
+					  <animateTransform attributeName="transform" id="anim1" attributeType="xml" dur="0.5s" from="65 410.192 410.192" repeatCount="indefinite" to="425 410.192 410.192" type="rotate"></animateTransform>
+				   </use>
+				   <g transform="translate(90 90)">
+					  <use xlink:href="#circle-fragments-c" fill="#6f9aa1" transform="rotate(-299.484 320.494 320.494)">
+						 <animateTransform attributeName="transform" id="anim2" attributeType="xml" dur="0.5s" from="-45 320.494 320.494" repeatCount="indefinite" to="-405 320.494 320.494" type="rotate"></animateTransform>
+					  </use>
+				   </g>
+				   <g transform="translate(178 178)">
+					  <use xlink:href="#circle-fragments-d" fill="#6f9aa1" transform="rotate(193.968 232.157 232.157)">
+						 <animateTransform attributeName="transform" id="anim3" attributeType="xml" dur="0.5s" from="45 232.157 232.157" repeatCount="indefinite" to="405 232.157 232.157" type="rotate"></animateTransform>
+					  </use>
+				   </g>
+				</g>
+			 </g>
+		  </svg>
+	   </div>
+	</div>
+	<div class="main-content">
+	   <div class="main-title">
+		  <h2>
+			 WE <br>PRODUCE
+			 <div class="slidingtext">
+				<owl-carousel
+				[options]="{items: 1, dots: false, nav: false, loop:true, autoplayTimeout: 3500, autoplay:true, animateIn: 'slideInUp', animateOut: 'slideOutUp', mouseDrag:false}" 
+				[carouselClasses]="['owl-theme', 'owl', 'row', 'owl-1', 'sliding']" #owlElements>
+				<div class="item">MOBILE APPS</div>
+				<div class="item">WEB DESIGN</div>
+				<div class="item">UI/UX DESIGN</div>
+				</owl-carousel>
+			 </div>
+		  </h2>
+		  <div class="button-area">
+			 <a href="#" routerLink = "/contact" #hoverme [@routerTransition]=contact><span class="btntext">Contact Us</span><span class="btnicon"><span class="iconnow"></span></span></a>
+		  </div>
+		  <div class="hidden-icon-social-link">
+				<ul>
+				   <li><a><i class="zmdi zmdi-skype"></i></a></li>
+				   <li><a><i class="zmdi zmdi-facebook"></i></a></li>
+				   <li><a><i class="zmdi zmdi-twitter"></i></a></li>
+				   <li><a><i class="zmdi zmdi-email"></i></a></li>
+				   <li><a><i class="zmdi zmdi-linkedin"></i></a></li>
+				</ul>
+			 </div>
+			 <div class="home-social-links">
+				<ul>
+				   <li><a>Skype</a></li>
+				   <li><a>Facebook</a></li>
+				   <li><a>Twitter</a></li>
+				   <li><a>Google Plus</a></li>
+				   <li><a>Linkedin</a></li>
+				</ul>
+			 </div>
+
+	   </div>
+	   
+	</div>
+ </div>
