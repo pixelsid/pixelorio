@@ -1,6 +1,6 @@
 <div class="all-sections" (scroll)="onscroll($event)">
   <div class="section section-slide">
-      <ngx-slick class="carousel servicecarousel" #slicker [config]="slideConfig">
+      <ngx-slick class="carousel servicecarousel" #slicker [config]="slideConfig" *ngIf="isLoaded">
           <div ngxSlickItem *ngFor="let slide of slides" class="slide">
                 <img src="{{ slide.img }}" alt="" width="100%" />
                 <div class="text-slide">
@@ -20,10 +20,10 @@
         <div class="grid-50">
           <div class="flexi">
             <div class="grid-50">
-              <img src="assets/img/craft.jpg" />
+              <img src="assets/img/apps/whyapp1.jpg" />
             </div>
             <div class="grid-50">
-              <img src="assets/img/craft2.jpg" />
+              <img src="assets/img/apps/whyapp2.jpg" />
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@ Pixelerio.
       </div>
     </div>
   </div>
-  <div class="section section-about-video">
+  <div class="section section-about-video section-app-video">
     <div class="container">
       <div class="flexi align-items-center">
         <div class="grid-50">
@@ -208,10 +208,10 @@ imagined.” <b>Co-Founder- Sangeeta.M Digitlism.com</b>
         <div class="grid-50">
           <div class="flexi align-items-center">
             <div class="grid-50">
-              <img src="assets/img/vid1.jpg" />
+              <img src="assets/img/apps/vid3.jpg" />
             </div>
             <div class="grid-50">
-              <img src="assets/img/vid1.jpg" />
+              <img src="assets/img/apps/vid4.jpg" />
             </div>
           </div>
         </div>

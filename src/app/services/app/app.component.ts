@@ -15,16 +15,15 @@ export class MobileappComponent implements OnInit {
   figureanim:any;
   windowwidth = window.outerWidth;
   charstext:any;
+  isLoaded:boolean=false;
   @ViewChild('slicker') slick: SlickComponent;
   slides = [
-    {img: "assets/img/apps/1.jpg", textmain: "Mobile Apps Ui/Ux"},
-    {img: "assets/img/slider2.jpg", textmain: "Mobile App Development"},
-    {img: "assets/img/slider3.jpg", textmain: "Digital Marketing"}
+    {img: "assets/img/apps/1.jpg", textmain: "Mobile Apps Ui/Ux"}
   ];
   bigcarousel = [
-    {img: "assets/img/bigcarousel1.jpg"},
-    {img: "assets/img/bigcarousel2.jpg"},
-    {img: "assets/img/bigcarousel3.jpg"}
+    {img: "assets/img/apps/itconsume.jpg"},
+    {img: "assets/img/apps/vr.jpg"},
+    {img: "assets/img/apps/edgecomputing.jpg"}
   ];
   smallcarousel = [
     {maintext:'Consumption-Based IT:', desctext:'Through the implementation of information technology (IT), businesses have the ability to analysis modification in the worldwide souk faster. Quite a while ago, we found IT departments restricted to certain aspects of business, however in recent times, IT has evolved to fit the needs of the business they serve.'},
@@ -32,16 +31,22 @@ export class MobileappComponent implements OnInit {
     {maintext:'Edge computing:', desctext:'With companies investing so much in autonomous vehicles and developing means for augmented cities, there are less chances of having data processing in cloud. Hence edge computing will be taking the forefront soon. Be a part of it.'}
   ];
   portfolios = [
-    {image:'assets/img/port11.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port12.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port13.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port14.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port15.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port16.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port17.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port18.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port19.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port20.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/1.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/2.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/3.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/5.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/6.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/7.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/8.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/9.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/10.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/11.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/12.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/13.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/14.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/15.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/16.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+    {image:'assets/img/apps/portfolio/17.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'}
   ];
   slideConfig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out'};
   slideConfigbig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out', asNavFor: '.carouselsmall'};
@@ -49,6 +54,7 @@ export class MobileappComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.isLoaded=true;
   }
 
   nextSlide(index){

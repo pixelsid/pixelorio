@@ -18,16 +18,16 @@ export class WebComponent implements OnInit {
   windowresolution = window.screen.width * window.devicePixelRatio;
   figureanim:any;
   bannerblur = 0;
+  isLoaded:boolean=false;
   @ViewChild('slicker') slick: SlickComponent;
   slides = [
     {img: "assets/img/web/1.jpeg", textmain: "Web Space Design"},
-    {img: "assets/img/web/2.jpg", textmain: "PSD Mockups to Web"},
-    {img: "assets/img/slider3.jpg", textmain: "Digital Marketing"}
+    {img: "assets/img/web/2.jpg", textmain: "PSD Mockups to Web"}
   ];
   bigcarousel = [
-    {img: "assets/img/bigcarousel1.jpg"},
-    {img: "assets/img/bigcarousel2.jpg"},
-    {img: "assets/img/bigcarousel3.jpg"}
+    {img: "assets/img/web/blockchain.jpg"},
+    {img: "assets/img/web/ai.jpg"},
+    {img: "assets/img/web/dataanalysis.jpeg"}
   ];
   smallcarousel = [
     {maintext:'Blockchain Technology:', desctext:'Cryptocurrency, Blockchain, or ICO. Call it anything, nowadays Blockchain website development is the most promising business app technology. Blockchain technology made a huge impact with the Bitcoin phenomenon. It has got the potential, if companies can figure out a way for lay users to understand and see its value. We can assist you in every aspect of it, we mean Blockchain.'},
@@ -54,6 +54,7 @@ export class WebComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoaded=true;
   }
 
   nextSlide(index){

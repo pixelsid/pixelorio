@@ -13,18 +13,17 @@ export class DigitalmarketingComponent implements OnInit {
   t2:any;
   texts:any;
   figureanim:any;
+  isLoaded:boolean=false;
   windowwidth = window.outerWidth;
   charstext:any;
   @ViewChild('slicker') slick: SlickComponent;
   slides = [
-    {img: "assets/img/dm/1.jpg", textmain: "Digitalize the web"},
-    {img: "assets/img/slider2.jpg", textmain: "Mobile App Development"},
-    {img: "assets/img/slider3.jpg", textmain: "Digital Marketing"}
+    {img: "assets/img/dm/1.jpg", textmain: "Digitalize the web"}
   ];
   bigcarousel = [
-    {img: "assets/img/bigcarousel1.jpg"},
-    {img: "assets/img/bigcarousel2.jpg"},
-    {img: "assets/img/bigcarousel3.jpg"}
+    {img: "assets/img/dm/ceo.jpg"},
+    {img: "assets/img/dm/aibots.jpg"},
+    {img: "assets/img/dm/multiclouds.jpg"}
   ];
   smallcarousel = [
     {maintext:'CEOs and taking Charge:', desctext:'Digital transformation is the profound transformation. The task of bringing digital transformation is often delegated to IT or Marketing departments and seldom from the top. Let’s rise above the challenge to improve business processes and develop new capabilities and business models.'},
@@ -49,6 +48,7 @@ export class DigitalmarketingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.isLoaded=true;
   }
 
   nextSlide(index){
