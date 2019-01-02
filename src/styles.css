@@ -3667,6 +3667,12 @@ line-height:normal;
 .text-center{
 	text-align: center;
 }
+.text-right{
+	text-align: right;
+}
+.text-left{
+	text-align: left;
+}
 .step-box{
 	font-family: "Open Sans", sans-serif;
 	color:#323232;
@@ -3968,6 +3974,104 @@ small{
 	transform-origin: right top 0px;
 	transition: all 1.5s;
 }
+.portwebimg{
+	height:400px;
+	overflow: hidden;
+}
+.portwebimg img{
+	max-width:100%;
+}
+.section-webfolio .container{
+	margin-top:60px;
+}
+.section-webfolio .flexi{
+	margin-bottom:100px;
+}
+.appaboutgrid.text-right{
+	padding-right:80px;
+}
+.appaboutgrid.text-left{
+	padding-left:80px;
+}
+.appaboutgrid > h2{
+	font-family: "Open Sans", sans-serif;
+	text-transform: uppercase;
+	font-size:36px;
+	margin-bottom:5px;
+}
+.appabout > span{
+	display: block;
+	margin-bottom:5px;
+	font-family: "Open Sans", sans-serif;
+	font-size:12px;
+	font-weight:600;
+}
+.appabout > a{
+	min-width: 120px;
+	display: inline-block;
+	color:#fff;
+	text-decoration: none;
+	position: relative;
+	padding:5px;
+	z-index:1;
+	text-align: left;
+	margin-top:5px;
+	transition:ease all 0.5s;
+}
+.appabout > a:before{
+	content:"";
+	background:#000;
+	position: absolute;
+	bottom:0;
+	top:0;
+	width:100%;
+	left:0;
+	z-index: -1;
+	transition:ease all 0.5s;
+}
+.appabout > a:hover{
+	color:#000;
+	font-size:20px;
+}
+.appabout > a:hover:before{
+	width:0;
+}
+.section-webfolio .flexi.odd{
+	direction: rtl;
+}
+.modalShow{
+	position: fixed;
+	background:rgba(0,0,0,0.8);
+	top:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	z-index:11;
+	cursor: pointer;
+}
+.imageSingle{
+	width:80%;
+	margin:0 auto;
+	overflow: auto;
+	height:100%;
+	cursor: n-resize;
+}
+.imageSingle img{
+	width:100%;
+}
+@keyframes shaker{
+	from{
+		transform:translateY(-100%) rotateY(120deg);
+	}
+	to{
+		transform: none;
+	}
+}
+@keyframes notransform{
+	to{
+		transform:translateY(-100%) rotateY(120deg);
+	}
+}
 
 
 /* ==============media queries============= */
@@ -4026,6 +4130,17 @@ small{
 		transform:none!important;
 		margin-left:15px;
 		margin-right:15px;
+	}
+	.section-webfolio .flexi{
+		flex-flow: column-reverse;
+		margin-bottom:50px;
+	}
+	.appaboutgrid.text-left {
+		padding-left: 15px;
+	}
+	.appaboutgrid.text-right {
+		padding-right: 15px;
+		text-align: left;
 	}
 	.animatearea{
 		transform:none!important;
@@ -4168,6 +4283,25 @@ small{
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		padding: 0 5px;
+		height:380px;
+	}
+	.details-overlay{
+		padding: 0 15px 15px;
+	}
+	.portname{
+		font-size:15px;
+	}
+	.portinfo {
+		font-size: 12px;
+	}
+	.rofess .owl-nav {
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: auto;
+		-webkit-transform: translate(-57%, -50%) rotate(90deg);
+		transform: none;
+		right: 0;
 	}
 	.home-social-links ul li{
 		display: inline-block;

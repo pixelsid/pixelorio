@@ -177,16 +177,24 @@ daily site development chore.
     </div>
   </div>
   <div class="animatearea">
-    <div class="section section-portfolio">
+    <div class="section section-portfolio section-webfolio">
       <div class="text-center">
         <small>Best of Ours</small>
         <div class="bighead">New Projects</div>
-        <div class="portfolio-grid">
-          <div class="portitem" *ngFor="let item of portfolios">
-            <img src="{{ item.image }}" />
-            <div class="details-overlay">
-              <div class="portname">{{ item.name }}</div>
-              <div class="portinfo">{{ item.category }}</div>
+        <div class="container">
+          <div class="flexi" *ngFor="let webfolio of webfolios; let i=index;" [ngClass]="{'even':i%2==0, 'odd':i%2!=0}">
+            <div class="grid-50 appaboutgrid" [ngClass]="{'text-right':i%2==0, 'text-left':i%2!=0}">
+              <h2>{{ webfolio.name }}</h2>
+              <div class="appabout">
+                <span>Favorite #{{ webfolio.favorite }}</span>
+                <span>{{ webfolio.category }}</span>
+                <a href="javascript:void(0);" (click)="showSingle($event,i)">VIEW</a>
+              </div>
+            </div>
+            <div class="grid-50">
+              <div class="portwebimg">
+                <img [src]="webfolio.image" />
+              </div>
             </div>
           </div>
         </div>
@@ -222,5 +230,11 @@ professionalism is rare in any field.- <b>Founder- Mayank.B</b>
   </div>
   <div class="section section-service-footer">
     <app-contact></app-contact>
+  </div>
+</div>
+
+<div class="modalShow" [ngStyle]="getStyles()" (click)="hideSingle()">
+  <div class="imageSingle">
+    <img [src]="singleImage" />
   </div>
 </div>

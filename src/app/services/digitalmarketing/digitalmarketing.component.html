@@ -173,21 +173,29 @@ roof, so why not to choose us.
     </div>
   </div>
   <div class="animatearea">
-    <div class="section section-portfolio">
-      <div class="text-center">
-        <small>Best of Ours</small>
-        <div class="bighead">New Projects</div>
-        <div class="portfolio-grid">
-          <div class="portitem" *ngFor="let item of portfolios">
-            <img src="{{ item.image }}" />
-            <div class="details-overlay">
-              <div class="portname">{{ item.name }}</div>
-              <div class="portinfo">{{ item.category }}</div>
+      <div class="section section-portfolio section-webfolio">
+        <div class="text-center">
+          <small>Best of Ours</small>
+          <div class="bighead">New Projects</div>
+          <div class="container">
+            <div class="flexi" *ngFor="let webfolio of webfolios; let i=index;" [ngClass]="{'even':i%2==0, 'odd':i%2!=0}">
+              <div class="grid-50 appaboutgrid" [ngClass]="{'text-right':i%2==0, 'text-left':i%2!=0}">
+                <h2>{{ webfolio.name }}</h2>
+                <div class="appabout">
+                  <span>Favorite #{{ webfolio.favorite }}</span>
+                  <span>{{ webfolio.category }}</span>
+                  <a href="javascript:void(0);" (click)="showSingle($event,i)">VIEW</a>
+                </div>
+              </div>
+              <div class="grid-50">
+                <div class="portwebimg">
+                  <img [src]="webfolio.image" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
   <div class="section section-about-video">
     <div class="container">
@@ -219,278 +227,9 @@ professionalism is rare in any field.- <b>Founder- Mayank.B</b>
     <app-contact></app-contact>
   </div>
 </div>
-<!-- <div class="webservices" (scroll)="onscroll($event)">
-  <div class="web-back-block backnotrotated">
-    <div class="backbgweb">
-      <div class="patternwebbg">
-        <div class="bgwebbottom">
-        </div>
-      </div>
-    </div>
-    <div class="servicebackblockcontent">
-      <div class="servicecolorblock">
-        <div class="servicecolorbg">
-          <span class="bgwaves"></span>
-        </div>
-        <div class="servicecontentstarts">
-          <div class="subtitleservice">
-            <div class="inlinersub">
-              <div class="wordweb">D</div>
-              <div class="wordweb">I</div>
-              <div class="wordweb">G</div>
-              <div class="wordweb">I</div>
-              <div class="wordweb">T</div>
-              <div class="wordweb">A</div>
-              <div class="wordweb">L</div>
-              <div class="wordweb" style="padding-right:5px;"></div>
-              <div class="wordweb">M</div>
-              <div class="wordweb">A</div>
-              <div class="wordweb">R</div>
-              <div class="wordweb">K</div>
-              <div class="wordweb">E</div>
-              <div class="wordweb">T</div>
-              <div class="wordweb">I</div>
-              <div class="wordweb">N</div>
-              <div class="wordweb">G</div>
-            </div>
-          </div>
-          <div class="servicemaintitle">
-            <div class="servicetitled">
-              <div>COMPLEX</div>
-              <div>PROJECTS GREAT</div>
-              <div>RESULTS</div>
-            </div>
-          </div>
-          <div class="servicemainimage">
-            <div class="imagecontainerservice">
-              <div class="imagecontent">
-                <app-digitalsvg></app-digitalsvg>
-              </div>
-            </div>
-          </div>
-          <div class="servicecolumns">
-            <div class="itemcolumn">
-              <div class="serviceacclaims">
-                <img src="assets/img/acclaims.svg" />
-              </div>
-              <div class="servicetitlecolumn">Experts acclaim</div>
-              <div class="servicedescmain">
-                <div class="descninner">Our works are among global design awards winners</div>
-              </div>
-            </div>
-            <div class="itemcolumn">
-              <div class="serviceacclaims">
-                <img src="assets/img/liveweb.svg" />
-              </div>
-              <div class="servicetitlecolumn">LIVE WEBSITES</div>
-              <div class="servicedescmain">
-                <div class="descninner">Thanks to using superb animations your website will not leave anyone indifferent</div>
-              </div>
-            </div>
-            <div class="itemcolumn">
-              <div class="serviceacclaims">
-                <img src="assets/img/highloaded.svg" />
-              </div>
-              <div class="servicetitlecolumn">HIGH LOAD</div>
-              <div class="servicedescmain">
-                <div class="descninner">Developing services capable of processing more than 1 million users</div>
-              </div>
-            </div>
-            <div class="itemcolumn">
-              <div class="serviceacclaims">
-                <img src="assets/img/machineicon.svg" />
-              </div>
-              <div class="servicetitlecolumn">MACHINE LEARNING</div>
-              <div class="servicedescmain">
-                <div class="descninner">Working with neural networks, recommendation systems, computer vision and text processing</div>
-              </div>
-            </div>
-          </div>
-          <div class="portfoliodigital">
-            <div class="portgeneral">
-              <div class="generalitem thin"></div>
-              <div class="generalitem thebig">
-                <div class="gnenralblockimage">
-                  <div class="griditemhere">
-                    <div class="gridimage" style="background-image:url('assets/img/digitalbig.jpg');"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="generalitem thin itemfill">
-                <div class="itemblock">
-                  <div class="itemblocktags">
-                    <span class="tagsitem">Mass Media</span>
-                    <span class="tagsitem"><span class="separator"></span>Concepts</span>
-                    <span class="tagsitem"><span class="separator"></span>Animations</span>
-                  </div>
-                  <div class="itemtitle">
-                    <div class="itemtitleblock">USA</div>
-                    <div class="itemtitleblock">TODAY</div>
-                  </div>
-                  <div class="itemsubtitle">
-                    <div class="itemtitleblock">Redesign</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-            <div class="portimages">
-              <div class="portimageitem">
-                <div class="portcontent">
-                  <div class="portcontentcontainer">
-                    <div class="portcontentcontainerbounds">
-                      <div class="boundsbg" style="background-image: url('assets/img/digitalbgmedium.jpg');"></div>
-                    </div>
-                    <span class="servicelabel">Live version</span>
-                  </div>
-                </div>
-              </div>
-              <div class="portimageitem right">
-                <div class="portcontent">
-                  <div class="portcontentcontainer">
-                    <div class="portcontentcontainerbounds">
-                      <div class="boundsbg" style="background-image: url('assets/img/digitalbgsmall.jpg');"></div>
-                    </div>
-                    <span class="servicelabel">DRIBBLE</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="portimages bottommore">
-              <div class="portimageitem">
-                <div class="portcontent">
-                  <div class="portcontentcontainer">
-                    <div class="portcontentcontainerbounds">
-                      <div class="boundsbg" style="background-image: url('assets/img/digitalmobile.jpg');"></div>
-                    </div>
-                    <span class="servicelabel">Mobile version</span>
-                  </div>
-                </div>
-              </div>
-              <div class="portimageitem right">
-                <div class="portcontent">
-                  <div class="portcontentcontainer">
-                    <div class="portcontentcontainerbounds">
-                      <div class="boundsbg" style="background-image: url('assets/img/digitalspace.jpg');"></div>
-                    </div>
-                    <span class="servicelabel">DRIBBLE</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="portgeneral bottomgeneral">
-              <div class="generalitem thebig">
-                <div class="gnenralblockimage">
-                  <div class="griditemhere">
-                    <div class="gridimage" style="background-image:url('assets/img/digitalbiggeneral.jpg');"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="generalitem thin"></div>
-              <div class="generalitem thin itemfill">
-                <div class="itemblock">
-                  <div class="itemblocktags">
-                    <span class="tagsitem">Mass Media</span>
-                    <span class="tagsitem"><span class="separator"></span>Concepts</span>
-                    <span class="tagsitem"><span class="separator"></span>Animations</span>
-                  </div>
-                  <div class="itemtitle">
-                    <div class="itemtitleblock">USA</div>
-                    <div class="itemtitleblock">TODAY</div>
-                  </div>
-                  <div class="itemsubtitle">
-                    <div class="itemtitleblock">Redesign</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="servicetechwork">
-        <div class="servicemasker">
-          <div class="techanimation">
-            <img src="assets/img/ai-file.svg" />
-          </div>
-        </div>
-      </div>
+
+<div class="modalShow" [ngStyle]="getStyles()" (click)="hideSingle()">
+    <div class="imageSingle">
+      <img [src]="singleImage" />
     </div>
   </div>
-
-
-  <div class="web-back-block backrotated">
-    <div class="backbgweb">
-      <div class="patternwebbg">
-        <div class="bgwebbottom">
-        </div>
-      </div>
-    </div>
-    <div class="servicebackblockcontent">
-      <div class="servicecolorblock">
-        <div class="servicecolorbg">
-          <span class="bgwaves"></span>
-        </div>
-        <div class="servicecontentstarts">
-          <div class="portfoliodigital">
-            <div class="portgeneral">
-              <div class="generalitem thin"></div>
-              <div class="generalitem thebig">
-                <div class="gnenralblockimage">
-                  <div class="griditemhere">
-                    <div class="gridimage" style="background-image:url('assets/img/digitalbig.jpg');"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="generalitem thin itemfill">
-                <div class="itemblock">
-                  <div class="itemblocktags">
-                    <span class="tagsitem">Mass Media</span>
-                    <span class="tagsitem"><span class="separator"></span>Concepts</span>
-                    <span class="tagsitem"><span class="separator"></span>Animations</span>
-                  </div>
-                  <div class="itemtitle">
-                    <div class="itemtitleblock">USA</div>
-                    <div class="itemtitleblock">TODAY</div>
-                  </div>
-                  <div class="itemsubtitle">
-                    <div class="itemtitleblock">Redesign</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-            
-            <div class="portgeneral bottomgeneral">
-              <div class="generalitem thebig">
-                <div class="gnenralblockimage">
-                  <div class="griditemhere" style="padding-top: 76.375%;">
-                    <div class="gridimage" style="background-image:url('assets/img/digitalbig2.jpg');"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="generalitem thin"></div>
-              <div class="generalitem thin itemfill">
-                <div class="itemblock">
-                  <div class="itemblocktags">
-                    <span class="tagsitem">Mass Media</span>
-                    <span class="tagsitem"><span class="separator"></span>Concepts</span>
-                    <span class="tagsitem"><span class="separator"></span>Animations</span>
-                  </div>
-                  <div class="itemtitle">
-                    <div class="itemtitleblock">USA</div>
-                    <div class="itemtitleblock">TODAY</div>
-                  </div>
-                  <div class="itemsubtitle">
-                    <div class="itemtitleblock">Redesign</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->

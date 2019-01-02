@@ -13,7 +13,13 @@ export class WebComponent implements OnInit {
   t2:any;
   texts:any;
   charstext:any;
+  scrolled:boolean=false;
+  isSingle:boolean=false;
   slideanim:any;
+  clickedpopup:boolean=false;
+  timeout:any;
+  singleImageTransition = new TimelineLite();
+  singleImage:any="assets/img/web/portfolio/1.jpg";
   windowwidth = window.outerWidth;
   windowresolution = window.screen.width * window.devicePixelRatio;
   figureanim:any;
@@ -34,17 +40,26 @@ export class WebComponent implements OnInit {
     {maintext:'Machine Learning to AI:', desctext:'This is the era of AI, there is a huge increase in the use of data analytics and their tools. Machine learning and AI are the future of all things business and pretty soon, a machine could be what is interacting with your consumers. Try Artificial Intelligence, Try Business Intelligence.'},
     {maintext:'Data Protection:', desctext:'As we found ourselves immersed in the Facebook scandal of lack of user data protection that shook users to start the #deletefacebook tag, we can surely expect a boom in data protection means in coming times. But when it comes to website or application, data protection is a must-have.'}
   ];
-  portfolios = [
-    {image:'assets/img/port11.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port12.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port13.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port14.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port15.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port16.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port17.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port18.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port19.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/port20.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+  webfolios = [
+    {image:'assets/img/web/portfolio/1.jpg', name: 'The Wild Adventure', category:'Ui/Ux', favorite:15},
+    {image:'assets/img/web/portfolio/2.jpg', name: 'The Right Book', category:'Ui/Ux', favorite:16},
+    {image:'assets/img/web/portfolio/3.jpg', name: 'Pitcrew', category:'Web Development', favorite:18},
+    {image:'assets/img/web/portfolio/4.jpg', name: 'Seeking Auto', category:'Ui/Ux', favorite:9},
+    {image:'assets/img/web/portfolio/5.jpg', name: 'Star Gems & Jewellery', category:'Ui/Ux', favorite:8},
+    {image:'assets/img/web/portfolio/6.jpg', name: 'Graphic Nation', category:'Ui/Ux', favorite:12},
+    {image:'assets/img/web/portfolio/7.jpg', name: 'Constructo - A web template', category:'Ui Mockups', favorite:11},
+    {image:'assets/img/web/portfolio/8.jpg', name: 'Law & General Agency', category:'Ui Mockups', favorite:13},
+    {image:'assets/img/web/portfolio/9.jpg', name: 'Neat Sweepers - A web template', category:'Ui Mockups', favorite:7},
+    {image:'assets/img/web/portfolio/10.jpg', name: 'News Buzz - A web template', category:'Ui Mockups', favorite:14},
+    {image:'assets/img/web/portfolio/11.jpg', name: 'Nypen', category:'Ui/Ux', favorite:10},
+    {image:'assets/img/web/portfolio/12.jpg', name: 'Nomadic', category:'Ui/Ux', favorite:17},
+    {image:'assets/img/web/portfolio/13.jpg', name: 'Onsite Go', category:'Ui/Ux', favorite:6},
+    {image:'assets/img/web/portfolio/14.jpg', name: 'Estate 365 - A web template', category:'Ui Mockups', favorite:5},
+    {image:'assets/img/web/portfolio/15.jpg', name: 'Radio Training Institute', category:'Ui/Ux', favorite:3},
+    {image:'assets/img/web/portfolio/16.jpg', name: 'Estate 366 - A web template', category:'Ui Mockups', favorite:19},
+    {image:'assets/img/web/portfolio/17.jpg', name: 'Bakery', category:'Ui/Ux', favorite:2},
+    {image:'assets/img/web/portfolio/18.jpg', name: 'Travel - A web template', category:'Ui Mockups', favorite:1},
+    {image:'assets/img/web/portfolio/19.jpg', name: 'Yoga - A web template', category:'Ui Mockups', favorite:4},
   ];
   slideConfig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out'};
   slideConfigbig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out', asNavFor: '.carouselsmall'};
@@ -85,6 +100,7 @@ export class WebComponent implements OnInit {
 
 
   @HostListener('scroll') onscroll(e){
+    var scroller=false;
     console.log('window: ' + e.target.scrollTop + ', ' + 'Branding: '+$('.section-branding').offset().top);
     let newblur = e.target.scrollTop/20;
     $('.section-slide .slick-slide img').css({
@@ -97,16 +113,52 @@ export class WebComponent implements OnInit {
       $('.animatearea').css({
         transform: 'none'
       }); 
+      scroller=true;
+      console.log(scroller);
     }
     else{
       $('.animatearea').css({
         transform: 'matrix(0, -1, 1, 0, -30, -'+this.windowwidth+')'
-      })
+      });
+      scroller=false;
     }
+    $('.section-webfolio .flexi').each(function(){
+      if(scroller){
+        let offsettop = ($('.section-portfolio').outerHeight()-($(this).offset().top+$(this).outerHeight()+$(window).outerHeight()))/4;
+        let doctop = e.target.scrollTop + $(window).outerHeight();
+        console.log(doctop + '====' +offsettop)
+        if(offsettop >= doctop){
+          $(this).addClass('current');
+        }
+        else{
+          $(this).removeClass('current');
+        }
+      }
+      else{
+        $(this).removeClass('current');
+      }
+    });
   }
 
   calcheightwindow(){
     let windowheight = Math.round(window.innerHeight/2);
     return windowheight;
+  }
+
+  showSingle(e:any, index:any){
+    this.isSingle=true;
+    this.clickedpopup=false;
+    this.singleImage=this.webfolios[index].image;
+  }
+
+  hideSingle(){
+    this.clickedpopup=true;
+    setTimeout(()=>{
+      this.isSingle=false;
+    },1000);
+  }
+
+  getStyles(){
+    return {'display' : this.isSingle ? 'block' : 'none', 'animation' : this.clickedpopup || !this.isSingle ? 'notransform 1s ease forwards' : 'shaker 1s ease both'}
   }
 }

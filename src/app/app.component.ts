@@ -173,7 +173,13 @@ ngAfterViewInit(){
     }
   else{
      $('#audio').remove() //just to make sure that it will not have 2x audio in the background 
-  }
+	}
+	$(window).blur(function(){
+		$('#iframeAudio').attr('src', '');
+	});
+	$(window).focus(function(e) {
+    $('#iframeAudio').attr('src','http://pixelorio.com/assets/sounds/bgpixel.mp3');
+	});
 	$('*').click(function(){
 		$('#audioclick')[0].play();
 	});

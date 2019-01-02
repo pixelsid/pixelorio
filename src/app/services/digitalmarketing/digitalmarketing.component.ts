@@ -13,6 +13,12 @@ export class DigitalmarketingComponent implements OnInit {
   t2:any;
   texts:any;
   figureanim:any;
+  isSingle:boolean=false;
+  slideanim:any;
+  clickedpopup:boolean=false;
+  timeout:any;
+  singleImageTransition = new TimelineLite();
+  singleImage:any="assets/img/web/portfolio/1.jpg";
   isLoaded:boolean=false;
   windowwidth = window.outerWidth;
   charstext:any;
@@ -41,6 +47,28 @@ export class DigitalmarketingComponent implements OnInit {
     {image:'assets/img/port18.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
     {image:'assets/img/port19.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
     {image:'assets/img/port20.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
+  ];
+
+  webfolios = [
+    {image:'assets/img/web/portfolio/1.jpg', name: 'The Wild Adventure', category:'Ui/Ux', favorite:15},
+    {image:'assets/img/web/portfolio/2.jpg', name: 'The Right Book', category:'Ui/Ux', favorite:16},
+    {image:'assets/img/web/portfolio/3.jpg', name: 'Pitcrew', category:'Web Development', favorite:18},
+    {image:'assets/img/web/portfolio/4.jpg', name: 'Seeking Auto', category:'Ui/Ux', favorite:9},
+    {image:'assets/img/web/portfolio/5.jpg', name: 'Star Gems & Jewellery', category:'Ui/Ux', favorite:8},
+    {image:'assets/img/web/portfolio/6.jpg', name: 'Graphic Nation', category:'Ui/Ux', favorite:12},
+    {image:'assets/img/web/portfolio/7.jpg', name: 'Constructo - A web template', category:'Ui Mockups', favorite:11},
+    {image:'assets/img/web/portfolio/8.jpg', name: 'Law & General Agency', category:'Ui Mockups', favorite:13},
+    {image:'assets/img/web/portfolio/9.jpg', name: 'Neat Sweepers - A web template', category:'Ui Mockups', favorite:7},
+    {image:'assets/img/web/portfolio/10.jpg', name: 'News Buzz - A web template', category:'Ui Mockups', favorite:14},
+    {image:'assets/img/web/portfolio/11.jpg', name: 'Nypen', category:'Ui/Ux', favorite:10},
+    {image:'assets/img/web/portfolio/12.jpg', name: 'Nomadic', category:'Ui/Ux', favorite:17},
+    {image:'assets/img/web/portfolio/13.jpg', name: 'Onsite Go', category:'Ui/Ux', favorite:6},
+    {image:'assets/img/web/portfolio/14.jpg', name: 'Estate 365 - A web template', category:'Ui Mockups', favorite:5},
+    {image:'assets/img/web/portfolio/15.jpg', name: 'Radio Training Institute', category:'Ui/Ux', favorite:3},
+    {image:'assets/img/web/portfolio/16.jpg', name: 'Estate 366 - A web template', category:'Ui Mockups', favorite:19},
+    {image:'assets/img/web/portfolio/17.jpg', name: 'Bakery', category:'Ui/Ux', favorite:2},
+    {image:'assets/img/web/portfolio/18.jpg', name: 'Travel - A web template', category:'Ui Mockups', favorite:1},
+    {image:'assets/img/web/portfolio/19.jpg', name: 'Yoga - A web template', category:'Ui Mockups', favorite:4},
   ];
   slideConfig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out'};
   slideConfigbig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out', asNavFor: '.carouselsmall'};
@@ -102,6 +130,23 @@ export class DigitalmarketingComponent implements OnInit {
   calcheightwindow(){
     let windowheight = Math.round(window.innerHeight/2);
     return windowheight;
+  }
+
+  showSingle(e:any, index:any){
+    this.isSingle=true;
+    this.clickedpopup=false;
+    this.singleImage=this.webfolios[index].image;
+  }
+
+  hideSingle(){
+    this.clickedpopup=true;
+    setTimeout(()=>{
+      this.isSingle=false;
+    },1000);
+  }
+
+  getStyles(){
+    return {'display' : this.isSingle ? 'block' : 'none', 'animation' : this.clickedpopup || !this.isSingle ? 'notransform 1s ease forwards' : 'shaker 1s ease both'}
   }
 
 }
