@@ -2116,6 +2116,27 @@ body ::selection {
 	text-decoration: none;
 	font-family: Open Sans, sans-serif;
 }
+.linkscgreen{
+	font-size: .75rem;
+    color: rgb(167, 221, 82);
+    line-height: 1.75;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+.linksblue{
+	color:rgb(44, 137, 221);
+	font-size: .75rem;
+    line-height: 1.75;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+.linkspink{
+	color:rgb(172, 105, 224);
+	font-size: .75rem;
+    line-height: 1.75;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
 .linksred{
 	font-size: .75rem;
     color: #f4a195;

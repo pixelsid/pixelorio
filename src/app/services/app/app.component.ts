@@ -31,22 +31,22 @@ export class MobileappComponent implements OnInit {
     {maintext:'Edge computing:', desctext:'With companies investing so much in autonomous vehicles and developing means for augmented cities, there are less chances of having data processing in cloud. Hence edge computing will be taking the forefront soon. Be a part of it.'}
   ];
   portfolios = [
-    {image:'assets/img/apps/portfolio/1.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/2.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/3.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/5.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/6.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/7.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/8.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/9.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/10.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/11.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/12.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/13.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/14.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/15.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/16.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'},
-    {image:'assets/img/apps/portfolio/17.jpg', name: 'Herbal Beauty Salon', category:'Branding and Brochure'}
+    {image:'assets/img/apps/portfolio/1.jpg', name: 'Kooklicious', category:'Restaurant App'},
+    {image:'assets/img/apps/portfolio/2.jpg', name: 'Hireo', category:'Job Board'},
+    {image:'assets/img/apps/portfolio/3.jpg', name: 'Gofight', category:'Tour & Travel'},
+    {image:'assets/img/apps/portfolio/5.jpg', name: 'Appero', category:'Assistance'},
+    {image:'assets/img/apps/portfolio/6.jpg', name: 'Stylestore', category:'Ecommerce'},
+    {image:'assets/img/apps/portfolio/7.jpg', name: 'Appiest', category:'Entertainment'},
+    {image:'assets/img/apps/portfolio/8.jpg', name: 'iplay', category:'Music & Sound'},
+    {image:'assets/img/apps/portfolio/9.jpg', name: 'Expro', category:'Assistance'},
+    {image:'assets/img/apps/portfolio/10.jpg', name: 'Instaview', category:'Social App'},
+    {image:'assets/img/apps/portfolio/11.jpg', name: 'Appero', category:'Assistance'},
+    {image:'assets/img/apps/portfolio/12.jpg', name: 'Gofight', category:'Tour & Travel'},
+    {image:'assets/img/apps/portfolio/13.jpg', name: 'Gofight', category:'Tour & Travel'},
+    {image:'assets/img/apps/portfolio/14.jpg', name: 'Appeasy', category:'Fitness'},
+    {image:'assets/img/apps/portfolio/15.jpg', name: 'Organizo', category:'Task Management'},
+    {image:'assets/img/apps/portfolio/16.jpg', name: 'Gofight', category:'Tour & Travel'},
+    {image:'assets/img/apps/portfolio/17.jpg', name: 'Appero', category:'Assistance'}
   ];
   slideConfig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out'};
   slideConfigbig = {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1, "fade":true, "autoplay": true, "autoplaySpeed": 6000, "infinite": true,"cssEase": 'ease-in-out', asNavFor: '.carouselsmall'};
