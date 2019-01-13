@@ -53,7 +53,7 @@ const appRoutes: Routes = [
   {path:'services/digitalmarketing', component: DigitalmarketingComponent, data: {state:'digital'}},
   {path:'services/digitalmarketing/details', component: DetailsComponent, data: {sate:'details'}},
   { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
-  { path: 'about', component: AboutComponent, data: { state: 'about' } },
+  { path: 'about', component: AboutComponent, data: { state: 'about', title:'About Us', description:'Description Meta Tag Content' } },
   { path: 'clientele', component: TestimonialComponent, data: { state: 'clientele' } } 
 ];
 

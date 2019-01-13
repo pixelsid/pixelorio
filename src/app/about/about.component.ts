@@ -1,6 +1,9 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import {OwlCarousel} from 'ngx-owl-carousel';
 import * as $ from 'jquery';
+import { SeoService } from '../seo.service';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 
 
@@ -18,12 +21,25 @@ export class AboutComponent implements OnInit {
   config:any={
 		mousewheel:true
   }
-  constructor() { }
+  constructor(private seoService:SeoService, private router:Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
-    // document.addEventListener('mousemove', (e)=>{
-    //   this.aboutmovable(e);
-    // });
+    // for seo
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map((route) => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      }),
+      filter((route) => route.outlet === 'primary'),
+      mergeMap((route) => route.data)
+     )
+     .subscribe((event) => {
+       this.seoService.updateTitle(event['title']);
+       //Updating Description tag dynamically with title
+       this.seoService.updateDescription(event['title'] + event['description'])
+     }); 
     $('.mainfeatures').css({
       transform: 'matrix(0, -1, 1, 0, -30, -'+this.windowwidth+')'
     });
