@@ -2158,10 +2158,14 @@ body ::selection {
     -webkit-transition: -webkit-transform .6s ease;
     transition: -webkit-transform .6s ease;
     transition: transform .6s ease;
-    transition: transform .6s ease,-webkit-transform .6s ease;
+	transition: transform .6s ease,-webkit-transform .6s ease;
+	max-width:450px;
 }
 .fixedillustration.scrolled img{
-	transform: translate3d(20%,-50%,0) rotate(-180deg);
+	transform: translate3d(20%,-50%,0) rotate(0deg);
+}
+.webicon img {
+    max-width: 100%;
 }
 .fixedpatterns{
 	background:url('assets/img/patternbg.png');

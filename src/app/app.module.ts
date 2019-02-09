@@ -33,6 +33,8 @@ import { LoaderService } from './loader.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CanvasbgComponent } from './canvasbg/canvasbg.component';
 import { SlickModule } from 'ngx-slick';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -93,7 +95,8 @@ const appRoutes: Routes = [
     SlickModule.forRoot(),
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
